@@ -1,7 +1,7 @@
 knitr:
-  opts_chunk: 
+  opts_chunk:
     collapse: true
-    comment: "## " 
+    comment: "## "
     cache: false
     fig.align: "center"
     python.reticulate: false

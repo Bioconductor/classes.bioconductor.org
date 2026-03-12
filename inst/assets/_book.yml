@@ -1,17 +1,18 @@
 book:
-  title: "<Package_name>"
+  title: "Bioconductor Classes Handbook"
   chapters:
     - index.qmd
+    - pages/introduction.qmd
   cover-image: assets/cover.png
   favicon: assets/favicon.png
-  sidebar: 
+  sidebar:
     tools:
       - icon: git
         menu:
           - text: Source Code
-            url:  https://github.com/<github_user>/<Package_name>/
+            url:  https://github.com/Bioconductor/classes.bioconductor.org/
           - text: Browse version `devel`
-            url:  https://<github_user>.github.io/<Package_name>/devel/
+            url:  https://Bioconductor.github.io/classes.bioconductor.org/devel/
     style: "docked"
     background: "light"
     collapse-level: 5
