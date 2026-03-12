@@ -2,7 +2,7 @@
 #| echo: false
 intro <- tryCatch(
     {
-        description <- packageDescription("<Package_name>")
+        description <- packageDescription("biocclasses")
         pkg <- description$Package
         version <- description$Version
         authors <- eval(parse(text = description$Authors))
@@ -33,7 +33,7 @@ This book introduces the reader to *...*.
 
 A `Docker` image built from this repository is available here: 
 
-👉 [ghcr.io/<github_user>/<package_name>](https://ghcr.io/<github_user>/<package_name>) 🐳
+👉 [ghcr.io/Bioconductor/classes.bioconductor.org](https://ghcr.io/Bioconductor/classes.bioconductor.org) 🐳
 
 ::: {.callout-tip icon='true'}
 ## Get started now 🎉
@@ -43,7 +43,7 @@ using this command in a terminal:
 
 ```{sh "docker", filename="bash"}
 #| eval: false
-docker run -it ghcr.io/<github_user>/<package_name>:devel R
+docker run -it ghcr.io/Bioconductor/classes.bioconductor.org:devel R
 ```
 
 :::
@@ -58,7 +58,7 @@ docker run \
     --volume <local_folder>:<destination_folder> \
     -e PASSWORD=OHCA \
     -p 8787:8787 \
-    ghcr.io/<github_user>/<package_name>:devel
+    ghcr.io/Bioconductor/classes.bioconductor.org:devel
 ```
 
 The initiated RStudio Server instance will be available at 
@@ -73,7 +73,7 @@ once the Docker image is loaded. It provides all the softwares listed in
 
 ```{sh "micromamba", filename="bash"}
 #| eval: false
-docker run -it ghcr.io/<github_user>/<package_name>:devel bash
+docker run -it ghcr.io/Bioconductor/classes.bioconductor.org:devel bash
 micromamba activate BiocBook
 ``` 
 -->
