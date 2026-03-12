@@ -1,22 +1,25 @@
-Package: <Package_name>
-Title: What the Package Does (One Line, Title Case)
-Description: 
-    This sentence is a placeholder. It should be changed by the author of 
-    the package to describe the purpose of this BiocBook. 
-    It should be at least 3 sentences otherwise `BiocCheck` will complain.
-Version: 0.98.0
-Date: `r date()`
+Package: biocclasses
+Title: The Bioconductor Classes Handbook
+Description: The S4 system is preferred for its strict
+  structure, robust error checking, and advanced dispatch capabilities, which
+  are essential for complex collaborative projects. Bioconductor leverages this
+  system to ensure interoperability and reliable code reuse across hundreds of
+  biological data analysis packages. The handbook provides an extensive catalog
+  of existing core S4 classes and encourages developers to reuse these
+  established foundations rather than creating redundant new ones.
+Version: 0.99.0
+Date: 2026-03-12
 Authors@R: 
     person(
-        "First", "Last", , "first.last@example.com", 
-        role = c("aut", "cre"),
-        comment = c(ORCID = "YOUR-ORCID-ID")
+        "Classes", "Working Group", , "maintainer@bioconductor.org", 
+        role = c("aut", "cre")
     )
-URL: https://github.com/<github_user>/<Package_name>
-BugReports: https://github.com/<github_user>/<Package_name>
+URL: https://github.com/Bioconductor/classes.bioconductor.org
+BugReports: https://github.com/Bioconductor/classes.bioconductor.org/issues
 Depends:
-    R (>= 4.3)
+    R (>= 4.6.0)
 Imports:
+    methods
 Suggests:
     BiocManager, 
     BiocVersion, 
@@ -27,7 +30,8 @@ Suggests:
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 BiocType: Book
-License: MIT + file LICENSE
+License: Artistic-2.0
 VignetteBuilder: knitr
 BiocBookTemplate: 1.0.6
 SystemRequirements: quarto
+RoxygenNote: 7.3.3
