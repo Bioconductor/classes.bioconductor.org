@@ -191,10 +191,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 </header><p><img src="assets/cover.png" title="Bioconductor Classes Handbook" class="quarto-cover-image nolightbox img-fluid"></p>
-<p><strong>Package:</strong> biocclasses<br><strong>Authors:</strong> Classes Working Group [aut, cre]<br><strong>Compiled:</strong> 2026-03-12<br><strong>Package version:</strong> 0.99.0<br><strong>R version:</strong> <b style="color:red;">R Under development (unstable) (2026-03-08 r89578)</b><br><strong>BioC version:</strong> <b style="color:red;">3.23</b><br><strong>License:</strong> Artistic-2.0<br></p>
+<p><strong>Package:</strong> biocclasses<br><strong>Authors:</strong> Classes Working Group [aut, cre]<br><strong>Compiled:</strong> 2026-03-16<br><strong>Package version:</strong> 0.99.0<br><strong>R version:</strong> <b style="color:red;">R Under development (unstable) (2026-03-15 r89629)</b><br><strong>BioC version:</strong> <b style="color:red;">3.23</b><br><strong>License:</strong> Artistic-2.0<br></p>
 <section id="welcome" class="level1 unnumbered"><h1 class="unnumbered">Welcome</h1>
-<p>This is the landing page of the <code>BiocBook</code> entitled <em>…</em>.</p>
-<p>This book introduces the reader to <em>…</em>.</p>
+<p>This is the landing page of the <code>BiocBook</code> entitled <strong>The Bioconductor Classes Handbook</strong>.</p>
+<p>This book introduces the reader to common Bioconductor classes and strategies for using Bioconductor classes for efficent code re-use.</p>
 </section><section id="docker-image" class="level1 unnumbered"><h1 class="unnumbered">Docker image</h1>
 <p>A <code>Docker</code> image built from this repository is available here:</p>
 <p>👉 <a href="https://ghcr.io/Bioconductor/classes.bioconductor.org">ghcr.io/Bioconductor/classes.bioconductor.org</a> 🐳</p>
@@ -228,7 +228,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="dt">\</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">--volume</span> <span class="op">&lt;</span>local_folder<span class="op">&gt;</span>:<span class="op">&lt;</span>destination_folder<span class="op">&gt;</span> <span class="dt">\</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">-e</span> PASSWORD=OHCA <span class="dt">\</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">-e</span> PASSWORD=bioc <span class="dt">\</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">-p</span> 8787:8787 <span class="dt">\</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    ghcr.io/Bioconductor/classes.bioconductor.org:devel</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -271,7 +271,7 @@ micromamba activate BiocBook
 <span><span class="op">)</span></span>
 <span><span class="co">##  ─ Session info ────────────────────────────────────────────────────────────</span></span>
 <span><span class="co">##   setting  value</span></span>
-<span><span class="co">##   version  R Under development (unstable) (2026-03-08 r89578)</span></span>
+<span><span class="co">##   version  R Under development (unstable) (2026-03-15 r89629)</span></span>
 <span><span class="co">##   os       Ubuntu 24.04.4 LTS</span></span>
 <span><span class="co">##   system   x86_64, linux-gnu</span></span>
 <span><span class="co">##   ui       X11</span></span>
@@ -279,16 +279,16 @@ micromamba activate BiocBook
 <span><span class="co">##   collate  C</span></span>
 <span><span class="co">##   ctype    en_US.UTF-8</span></span>
 <span><span class="co">##   tz       Etc/UTC</span></span>
-<span><span class="co">##   date     2026-03-12</span></span>
+<span><span class="co">##   date     2026-03-16</span></span>
 <span><span class="co">##   pandoc   3.9 @ /usr/bin/ (via rmarkdown)</span></span>
 <span><span class="co">##   quarto   1.8.25 @ /usr/local/bin/quarto</span></span>
 <span><span class="co">##  </span></span>
 <span><span class="co">##  ─ Packages ────────────────────────────────────────────────────────────────</span></span>
 <span><span class="co">##   package        * version date (UTC) lib source</span></span>
 <span><span class="co">##   askpass          1.2.1   2024-10-04 [2] CRAN (R 4.6.0)</span></span>
-<span><span class="co">##   base           * 4.6.0   2026-03-09 [3] local</span></span>
+<span><span class="co">##   base           * 4.6.0   2026-03-16 [3] local</span></span>
 <span><span class="co">##   base64enc        0.1-6   2026-02-02 [2] CRAN (R 4.6.0)</span></span>
-<span><span class="co">##   biocclasses      0.99.0  2026-03-12 [1] local</span></span>
+<span><span class="co">##   biocclasses      0.99.0  2026-03-16 [1] local</span></span>
 <span><span class="co">##   BiocManager      1.30.27 2025-11-14 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   BiocStyle        2.39.0  2025-10-30 [2] Bioconductor 3.23 (R 4.6.0)</span></span>
 <span><span class="co">##   BiocVersion      3.23.1  2025-10-30 [2] Bioconductor 3.23 (R 4.6.0)</span></span>
@@ -305,14 +305,14 @@ micromamba activate BiocBook
 <span><span class="co">##   cluster          2.1.8.2 2026-02-05 [3] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   codetools        0.2-20  2024-03-31 [3] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   commonmark       2.0.0   2025-07-07 [2] CRAN (R 4.6.0)</span></span>
-<span><span class="co">##   compiler         4.6.0   2026-03-09 [3] local</span></span>
+<span><span class="co">##   compiler         4.6.0   2026-03-16 [3] local</span></span>
 <span><span class="co">##   cpp11            0.5.3   2026-01-20 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   crayon           1.5.3   2024-06-20 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   credentials      2.0.3   2025-09-12 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   curl             7.0.0   2025-08-19 [2] CRAN (R 4.6.0)</span></span>
-<span><span class="co">##   datasets       * 4.6.0   2026-03-09 [3] local</span></span>
+<span><span class="co">##   datasets       * 4.6.0   2026-03-16 [3] local</span></span>
 <span><span class="co">##   desc             1.4.3   2023-12-10 [2] CRAN (R 4.6.0)</span></span>
-<span><span class="co">##   devtools         2.4.6   2025-10-03 [2] CRAN (R 4.6.0)</span></span>
+<span><span class="co">##   devtools         2.5.0   2026-03-14 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   diffobj          0.3.6   2025-04-21 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   digest           0.6.39  2025-11-19 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   docopt           0.7.2   2025-03-25 [2] CRAN (R 4.6.0)</span></span>
@@ -328,9 +328,9 @@ micromamba activate BiocBook
 <span><span class="co">##   gh               1.5.0   2025-05-26 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   gitcreds         0.1.2   2022-09-08 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   glue             1.8.0   2024-09-30 [2] CRAN (R 4.6.0)</span></span>
-<span><span class="co">##   graphics       * 4.6.0   2026-03-09 [3] local</span></span>
-<span><span class="co">##   grDevices      * 4.6.0   2026-03-09 [3] local</span></span>
-<span><span class="co">##   grid             4.6.0   2026-03-09 [3] local</span></span>
+<span><span class="co">##   graphics       * 4.6.0   2026-03-16 [3] local</span></span>
+<span><span class="co">##   grDevices      * 4.6.0   2026-03-16 [3] local</span></span>
+<span><span class="co">##   grid             4.6.0   2026-03-16 [3] local</span></span>
 <span><span class="co">##   highr            0.12    2026-03-06 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   htmltools        0.5.9   2025-12-04 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   htmlwidgets      1.6.4   2023-12-06 [2] CRAN (R 4.6.0)</span></span>
@@ -349,7 +349,7 @@ micromamba activate BiocBook
 <span><span class="co">##   MASS             7.3-65  2025-02-28 [3] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   Matrix           1.7-4   2025-08-28 [3] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   memoise          2.0.1   2021-11-26 [2] CRAN (R 4.6.0)</span></span>
-<span><span class="co">##   methods        * 4.6.0   2026-03-09 [3] local</span></span>
+<span><span class="co">##   methods        * 4.6.0   2026-03-16 [3] local</span></span>
 <span><span class="co">##   mgcv             1.9-4   2025-11-07 [3] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   mime             0.13    2025-03-17 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   miniUI           0.1.2   2025-04-17 [2] CRAN (R 4.6.0)</span></span>
@@ -357,7 +357,8 @@ micromamba activate BiocBook
 <span><span class="co">##   nnet             7.3-20  2025-01-01 [3] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   openssl          2.3.5   2026-02-26 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   otel             0.2.0   2025-08-29 [2] CRAN (R 4.6.0)</span></span>
-<span><span class="co">##   parallel         4.6.0   2026-03-09 [3] local</span></span>
+<span><span class="co">##   pak              0.9.2   2025-12-22 [2] CRAN (R 4.6.0)</span></span>
+<span><span class="co">##   parallel         4.6.0   2026-03-16 [3] local</span></span>
 <span><span class="co">##   pillar           1.11.1  2025-09-17 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   pkgbuild         1.4.8   2025-05-26 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   pkgconfig        2.0.3   2019-09-22 [2] CRAN (R 4.6.0)</span></span>
@@ -389,24 +390,24 @@ micromamba activate BiocBook
 <span><span class="co">##   shiny            1.13.0  2026-02-20 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   sourcetools      0.1.7-1 2023-02-01 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   spatial          7.3-18  2025-01-01 [3] CRAN (R 4.6.0)</span></span>
-<span><span class="co">##   splines          4.6.0   2026-03-09 [3] local</span></span>
-<span><span class="co">##   stats          * 4.6.0   2026-03-09 [3] local</span></span>
-<span><span class="co">##   stats4           4.6.0   2026-03-09 [3] local</span></span>
+<span><span class="co">##   splines          4.6.0   2026-03-16 [3] local</span></span>
+<span><span class="co">##   stats          * 4.6.0   2026-03-16 [3] local</span></span>
+<span><span class="co">##   stats4           4.6.0   2026-03-16 [3] local</span></span>
 <span><span class="co">##   stringi          1.8.7   2025-03-27 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   stringr          1.6.0   2025-11-04 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   survival         3.8-6   2026-01-16 [3] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   sys              3.4.3   2024-10-04 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   systemfonts      1.3.2   2026-03-05 [2] CRAN (R 4.6.0)</span></span>
-<span><span class="co">##   tcltk            4.6.0   2026-03-09 [3] local</span></span>
+<span><span class="co">##   tcltk            4.6.0   2026-03-16 [3] local</span></span>
 <span><span class="co">##   testthat         3.3.2   2026-01-11 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   textshaping      1.0.5   2026-03-06 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   tibble           3.3.1   2026-01-11 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   tinytex          0.58    2025-11-19 [2] CRAN (R 4.6.0)</span></span>
-<span><span class="co">##   tools            4.6.0   2026-03-09 [3] local</span></span>
+<span><span class="co">##   tools            4.6.0   2026-03-16 [3] local</span></span>
 <span><span class="co">##   urlchecker       1.0.1   2021-11-30 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   usethis          3.2.1   2025-09-06 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   utf8             1.2.6   2025-06-08 [2] CRAN (R 4.6.0)</span></span>
-<span><span class="co">##   utils          * 4.6.0   2026-03-09 [3] local</span></span>
+<span><span class="co">##   utils          * 4.6.0   2026-03-16 [3] local</span></span>
 <span><span class="co">##   vctrs            0.7.1   2026-01-23 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   waldo            0.6.2   2025-07-11 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   whisker          0.4.1   2022-12-05 [2] CRAN (R 4.6.0)</span></span>
@@ -418,7 +419,7 @@ micromamba activate BiocBook
 <span><span class="co">##   yaml             2.3.12  2025-12-10 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##   zip              2.3.3   2025-05-13 [2] CRAN (R 4.6.0)</span></span>
 <span><span class="co">##  </span></span>
-<span><span class="co">##   [1] /tmp/RtmpEmQxbw/Rinst8b5beb86a7</span></span>
+<span><span class="co">##   [1] /tmp/RtmpurqOMR/Rinst8b2a8e1639</span></span>
 <span><span class="co">##   [2] /usr/local/lib/R/site-library</span></span>
 <span><span class="co">##   [3] /usr/local/lib/R/library</span></span>
 <span><span class="co">##   * ── Packages attached to the search path.</span></span>
