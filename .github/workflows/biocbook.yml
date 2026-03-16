@@ -2,6 +2,9 @@ name: biocbook
 
 on:
   push:
+    paths:
+      - 'DESCRIPTION'
+      - '**.yml'
     branches:
       - devel
       - RELEASE_**

@@ -1,0 +1,85 @@
+name: R CMD check & build
+
+on:
+  pull_request:
+  push:
+    paths:
+      - 'DESCRIPTION'
+      - '**.yml'
+    branches:
+      - devel
+
+env:
+  R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
+  GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+  CRAN: https://p3m.dev/cran/__linux__/noble/latest
+  BIOC_VERSION: devel
+
+jobs:
+  set-matrix:
+    runs-on: ubuntu-24.04
+    outputs:
+      matrix: ${{ steps.set.outputs.matrix }}
+    steps:
+      - name: Set Matrix Bioconductor Version
+        id: set
+        run: |
+          MATRIX="{\"include\":[{\"bioc_version\":\"devel\"}]}"
+          echo "matrix=$MATRIX" >> $GITHUB_OUTPUT
+
+  build-check:
+    needs: set-matrix
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{ fromJson(needs.set-matrix.outputs.matrix) }}
+    container: bioconductor/bioconductor_docker:${{ matrix.bioc_version }}
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ matrix.bioc_version }}
+
+      - name: Install system dependencies (jq, curl, ca-certs)
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends jq curl ca-certificates
+          jq --version
+
+      - name: Install quarto CLI
+        uses: quarto-dev/quarto-actions/setup@v2
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tinytex: true
+
+      - name: Query dependencies
+        run: |
+          BiocManager::install(c("remotes", "quarto"))
+          saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
+        shell: Rscript {0}
+
+      - name: Install R Package
+        run: |
+          remotes::install_local(repos = BiocManager::repositories())
+        shell: Rscript {0}
+
+      - name: Cache R packages
+        uses: actions/cache@v4
+        with:
+          path: /usr/local/lib/R/site-library
+          key: ${{ runner.os }}-r-${{ matrix.bioc_version }}-${{ hashFiles('.github/depends.Rds') }}
+          restore-keys: ${{ runner.os }}-r-${{ matrix.bioc_version }}-
+
+      - name: Install Dependencies
+        run: |
+          BiocManager::install(ask = FALSE, update = TRUE)
+          remotes::install_deps(dependencies = TRUE, repos = BiocManager::repositories())
+        shell: Rscript {0}
+
+      - name: Check Package
+        env:
+          _R_CHECK_CRAN_INCOMING_REMOTE_: false
+        run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error", check_dir = "check")
+        shell: Rscript {0}
+
