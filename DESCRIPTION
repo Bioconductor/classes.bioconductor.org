@@ -33,5 +33,5 @@ BiocType: Book
 License: Artistic-2.0
 VignetteBuilder: knitr
 BiocBookTemplate: 1.0.6
-SystemRequirements: quarto
+SystemRequirements: quarto, jq
 RoxygenNote: 7.3.3
