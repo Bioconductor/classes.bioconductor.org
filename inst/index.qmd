@@ -25,9 +25,11 @@ intro <- tryCatch(
 
 # Welcome {-}
 
-This is the landing page of the `BiocBook` entitled *...*.  
+This is the landing page of the `BiocBook` entitled **The Bioconductor Classes
+Handbook**.
 
-This book introduces the reader to *...*.  
+This book introduces the reader to common Bioconductor classes and strategies
+for using Bioconductor classes for efficent code re-use.
 
 # Docker image {-}
 
@@ -56,7 +58,7 @@ An RStudio Server instance can be initiated from the `Docker` image as follows:
 #| eval: false
 docker run \
     --volume <local_folder>:<destination_folder> \
-    -e PASSWORD=OHCA \
+    -e PASSWORD=bioc \
     -p 8787:8787 \
     ghcr.io/Bioconductor/classes.bioconductor.org:devel
 ```

@@ -8,3 +8,4 @@ RUN Rscript -e 'remotes::install_local(path = "/opt/pkg/", repos=BiocManager::re
 ## Build/install using same approach than BBS
 RUN R CMD INSTALL /opt/pkg
 RUN quarto install --quiet tinytex && R CMD build --keep-empty-dirs --no-resave-data /opt/pkg
+
