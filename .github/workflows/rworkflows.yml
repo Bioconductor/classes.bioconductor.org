@@ -24,7 +24,7 @@ jobs:
           bioc: devel
           r: auto
           cont: ghcr.io/bioconductor/bioconductor:devel
-          rspm: https://packagemanager.rstudio.com/cran/__linux__/focal/release
+          rspm: https://p3m.dev/cran/__linux__/noble/latest
         # - os: macOS-latest
         #   bioc: release
         #   r: auto
@@ -51,3 +51,4 @@ jobs:
         run_docker: ${{ false }}
         runner_os: ${{ runner.os }}
         cache_version: cache-v1
+
